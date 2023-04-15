@@ -11,8 +11,8 @@
 .mainContainer{
   display: flex;
   width: auto;
-  height: 100vh;
-  flex-direction: row;
+ height: 100%;
+  flex-direction: row;  
   align-items: center;
   justify-content: center;
 }
@@ -22,7 +22,7 @@ form{
   gap: 2rem;
   padding-top: 16px;
   padding-bottom: 16px;
-  z-index: 1;
+
 
 }
 .formLeftContainer{
