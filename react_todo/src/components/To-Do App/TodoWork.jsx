@@ -11,12 +11,13 @@ return (
 <div>
 {todos.map((todo) => (
 <Work
-         key={todo.id}
+         key={uuid()}
          id={todo.id}
          title={todo.title}
          description={todo.description}
          setTodo={setTodo}
        />
+       
 ))}
 </div>
 );
