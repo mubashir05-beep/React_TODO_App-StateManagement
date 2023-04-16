@@ -51,50 +51,49 @@ const Work = ({ id, title, description, setTodo }) => {
       <div className="workTitleContainer">
         <div className="title">{title}</div>
         <div className="icons">
-          <FiEdit3 id="editIcn" onClick={handleModal} />
-          <MdDeleteForever id="editIcn" onClick={handleDelete} />
+          <div className="editicons tooltipright">
+          <FiEdit3 id="editIcn" onClick={handleModal} /><span className="tooltiptextright">Edit</span>
+          </div>
+          <div className="iconDelete tooltipleft">
+          <MdDeleteForever id="editIcn" onClick={handleDelete} /><span className="tooltiptextleft">Delete</span>
+          </div>
+        
         </div>
       </div>
       <div className="descModel">{description}</div>
       <div className="formEditContainer">
-      
-          {toggleModal && (
-              <div className="formEdit">
-            <form onSubmit={handleEdit}>
+        {toggleModal && (
+          <div className="formEdit">
+            <form id="formEditALL" onSubmit={handleEdit}>
               <div className="inputText">
-                <div className="inputEditText">
-                  Change Title
-                </div>
-              <input
-                type="text"
-                name="editName"
-                value={editTitle}
-                onChange={edit_Title}
-              />
+                <div className="inputEditText">Change Title</div>
+                <input
+                  type="text"
+                  name="editName"
+                  value={editTitle}
+                  onChange={edit_Title}
+                  placeholder="Enter new title"
+                />
               </div>
-             <div className="inputDesc">
-             <div className="inputEditDesc">
-                  Change Description
-                </div>
-             <input
-                type="text"
-                name="editDesc"
-                value={editDesc}
-                onChange={edit_Desc}
-              />
-             </div>
-              
+              <div className="inputDesc">
+                <div className="inputEditDesc ">Change Description</div>
+                <input
+                  type="text"
+                  name="editDesc"
+                  value={editDesc}
+                  onChange={edit_Desc}
+                  placeholder="Enter new description"
+                />
+              </div>
+
               <button type="submit">submit</button>
             </form>
-            <div className="crossIcon">
-            <GrFormClose/>
+            <div className="crossIcon tooltip">
+              <GrFormClose onClick={handleModal} /><span className="tooltiptext">Close</span>
             </div>
-           
-            </div>
-          )}
-        </div>
-      
-    
+          </div>
+        )}
+      </div>
     </div>
   );
 };

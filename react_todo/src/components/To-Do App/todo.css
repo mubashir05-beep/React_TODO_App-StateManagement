@@ -1,40 +1,171 @@
-/* <div className='container'>
-<div className='title'>Complete this app</div>
-<div className='desc'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium est explicabo modi facere laborum? Assumenda.</div>
-</div> */
 
-.container{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    word-wrap: normal;
-    width: 35rem;
-    margin-bottom: 10px;
-    border: 1px solid black;
-    padding: 10px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  word-wrap: normal;
+  width: 35rem;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  padding: 10px;
 }
-.title{
-    font-size: 18px;
-    font-weight: 400;
-    padding-bottom: 6px;
-    margin-bottom: 4px;
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.workTitleContainer {
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#editIcn {
+  cursor: pointer;
+
+  scale: 1.1;
+}
+.icons {
+  display: flex;
+  gap: 0.7rem;
+}
+.descModel {
+  font-size: 14px;
+}
+.formEdit {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+}
+#formEditALL {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-top: 1px solid black;
+  margin: 14px;
+}
+.inputEditText,
+.inputEditDesc {
+  font-size: 15px;
+  font-weight: 500;
+}
+.crossIcon {
+  height: 0px;
+  cursor: pointer;
+  scale: 1.5;
+}
+.inputText,
+.inputDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 40px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px 0;
+  position: absolute;
+  z-index: 1;
+  top: -1.5px;
+  left: 110%;
+  margin-left: 5px;
+  font-size: 8px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltipright {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+  .tooltipright .tooltiptextright {
+    visibility: hidden;
+    width: 40px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    font-size: 12px;
+    margin-right: 5px;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+  }
+  
+  .tooltipright .tooltiptextright::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+  }
+  .tooltipright:hover .tooltiptextright {
+    visibility: visible;
+  }
+  .tooltipleft {
+    position: relative;
+    display: inline-block;
     
-}
-
-.workTitleContainer{
-    border-bottom: 1px solid black;
-     display: flex; 
-    align-items: center;
-    justify-content: space-between;
-}
-#editIcn{
-    cursor: pointer;
-    scale: 1.1;
-}
-.icons{
-    display: flex;
-    gap: 0.6rem;
-}
-.descModel{
-    font-size: 14px;
-}
+  }
+  
+  .tooltipleft .tooltiptextleft {
+    visibility: hidden;
+    width: 55px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    font-size: 12px;
+    z-index: 1;
+    top: -5px;
+    margin-left: 5px;
+    left: 110%;
+  }
+  
+  .tooltipleft .tooltiptextleft::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }
+  .tooltipleft:hover .tooltiptextleft {
+    visibility: visible;
+  }

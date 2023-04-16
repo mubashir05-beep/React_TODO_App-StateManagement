@@ -42,7 +42,7 @@ const AddTodo = () => {
                 type="text"
                 name="title"
                 value={title}
-                placeholder="Please Enter A Todo Task"
+                placeholder="Enter title"
                 onChange={getTitle}
               />
             </div>
@@ -52,15 +52,15 @@ const AddTodo = () => {
                 type="text"
                 name="description"
                 value={desc}
-                placeholder="Please Enter A Task Description"
+                placeholder="Enter description"
                 onChange={getDesc}
               />
             </div>
 
             <button>Submit</button>
           </div>
-          <div className="formRightContainer">
-            <GrFormClose onClick={handleModal} />
+          <div className="formRightContainer tooltip">
+            <GrFormClose onClick={handleModal} /><span className="tooltiptext">Close</span>
           </div>
         </form>
       )}
