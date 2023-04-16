@@ -32,9 +32,19 @@ const Work = ({ id, title, description, setTodo }) => {
       setEditDesc('');
     }
   }
+  function handleDelete(e) {
+    e.preventDefault();
+    setTodo((prevTodo) => {
+      return prevTodo.filter(item => item.id !== id);
+    });
+    setEditTitle('');
+    setEditDesc('');
+  }
+  
 function handleModal(){
   return setToggleModal(!toggleModal);
 }
+
   return (
     <div className="container">
       <div className="workTitleContainer">
@@ -43,7 +53,7 @@ function handleModal(){
           <FiEdit3 id="editIcn"  onClick={
             handleModal
           }/>
-          <MdDeleteForever id="editIcn"/>
+          <MdDeleteForever id="editIcn" onClick={handleDelete}/>
         </div>
       </div>
       <div className="descModel">{description}</div>
