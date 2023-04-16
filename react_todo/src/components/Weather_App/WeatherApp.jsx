@@ -1,8 +1,8 @@
 import React from 'react'
-
+import "./weather.css"
 const WeatherApp = () => {
   return (
-    <div>WeatherApp</div>
+    <div className='mainWeatherContainer'>WeatherApp</div>
   )
 }
 

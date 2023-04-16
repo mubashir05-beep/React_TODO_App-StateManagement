@@ -7,15 +7,14 @@ import Music from "./components/Music/Music";
 function App() {
   return (
     <div className="mainContainer">
-      {/* <WeatherApp /> */}
+      <WeatherApp />
       <Todo>
-        <div className="App">
+        <div className="TodoApp">
           <AddTodo/>
           <TodoWork />
-          
         </div>
       </Todo>
-      {/* <Music /> */}
+      <Music />
     </div>
   );
 }

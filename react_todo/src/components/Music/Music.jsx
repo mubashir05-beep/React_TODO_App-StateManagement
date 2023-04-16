@@ -1,8 +1,9 @@
 import React from 'react'
-
+import './music.css'
 const Music = () => {
   return (
-    <div>Music</div>
+    <div
+      className='musicMainContainer'>Music</div>
   )
 }
 

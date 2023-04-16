@@ -1,0 +1,10 @@
+.mainWeatherContainer{
+    display: flex;
+    width: 33.333vw;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 90vh;
+    margin: 5vh 0;
+}

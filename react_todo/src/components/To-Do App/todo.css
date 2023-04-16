@@ -5,10 +5,17 @@
   flex-direction: column;
   text-align: left;
   word-wrap: normal;
-  width: 35rem;
+  width: 32rem;
   margin-bottom: 10px;
   border: 1px solid black;
   padding: 10px;
+}
+.green{
+    /* color: greenyellow; */
+}
+.checkicon{
+    scale: 1.1;
+    cursor:  pointer;
 }
 .title {
   font-size: 18px;
