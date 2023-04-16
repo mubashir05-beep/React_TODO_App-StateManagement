@@ -10,6 +10,7 @@ const Work = ({ id, title, description, setTodo, checked }) => {
   const [editTitle, setEditTitle] = useState("");
   const [editDesc, setEditDesc] = useState("");
   const [toggleModal, setToggleModal] = useState(false);
+  const [green,setGreen]=useState(false);
   function edit_Title(e) {
     setEditTitle(e.target.value);
   }
@@ -47,6 +48,21 @@ const Work = ({ id, title, description, setTodo, checked }) => {
   function handleModal() {
     return setToggleModal(!toggleModal);
   }
+  function handleGreen(e) {
+    e.preventDefault();
+    setTodo((prevTodo) => {
+      return prevTodo.map((todo) => {
+        if (todo.id === id) {
+          const updatedChecked = !checked; // Toggle the `checked` property of the todo item
+          // setGreen(updatedChecked); // Remove this line, as it seems to be unrelated to `todos` state
+          return { ...todo, checked: updatedChecked };
+        }
+        return todo;
+      });
+    });
+  }
+  
+  
   
   return (
     <>
@@ -56,10 +72,11 @@ const Work = ({ id, title, description, setTodo, checked }) => {
             <div className="title">{title}</div>
             <div className="icons">
               <div className="iconCheck">
-                <AiOutlineCheckCircle
-                  className="checkicon green"
-                  onClick={handleChecked}
+              <AiOutlineCheckCircle
+                  className={checked ? "checkicon green" : "checkicon"}
+                  onClick={handleGreen}
                 />
+                
               </div>
               <div className="editicons tooltipright">
                 <FiEdit3 id="editIcn" onClick={handleModal} />
@@ -107,10 +124,6 @@ const Work = ({ id, title, description, setTodo, checked }) => {
             )}
           </div>
         </div>
-      </div>
-      <div>
-        Completed Task
-        {<CompletedTask title={check.title} description={check.description} />}
       </div>
     </>
   );

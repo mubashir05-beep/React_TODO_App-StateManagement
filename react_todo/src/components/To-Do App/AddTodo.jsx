@@ -18,7 +18,7 @@ const AddTodo = () => {
     if (title == "" || desc == "") {
       return 0;
     } else {
-      setTodo((prevTodo) => [...prevTodo, { title: title, description: desc }]);
+      setTodo((prevTodo) => [...prevTodo, { title: title, description: desc, checked:false }]);
       setTitle("");
       setDesc("");
     }
@@ -60,7 +60,8 @@ const AddTodo = () => {
             <button>Submit</button>
           </div>
           <div className="formRightContainer tooltip">
-            <GrFormClose onClick={handleModal} /><span className="tooltiptext">Close</span>
+            <GrFormClose onClick={handleModal} />
+            <span className="tooltiptext">Close</span>
           </div>
         </form>
       )}
