@@ -1,6 +1,16 @@
 # React_TODO_App-StateManagement
 
 # React Todo-App
+**Features:**
+
+    Create: Users can easily create new tasks by entering the task name in the input field and clicking the "Add" button.
+    Read: Users can view their tasks in a list format, with each task displaying its name, status (in progress or complete), and options to edit or delete the task.
+    Update: Users can edit tasks by clicking the "Edit" button, which opens a modal with an input field to modify the task name. Once the changes are made, users can save the updated task.
+    Delete: Users can delete tasks by clicking the "Delete" button, which removes the task from the list of tasks.
+    Mark in progress/complete: Users can mark tasks as in progress or complete by clicking the corresponding buttons next to each task. This visually indicates the status of the task.
+    State management: The app uses state management techniques in React, such as useState and useEffect hooks, to handle the state of tasks and manage the CRUD operations.
+
+
 (NODE should be installed on the system)
 To Run Locally :
 
