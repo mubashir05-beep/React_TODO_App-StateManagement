@@ -16,12 +16,14 @@ const AddTodo = () => {
   };
   const addTodo = (e) => {
     e.preventDefault();
-    if (title == "" ) {
-      return alert('Please Enter Title! Description can be added in post-edit.');
+    if (title == "") {
+      return alert(
+        "Please Enter Title! Description can be added in post-edit."
+      );
     } else {
       setTodo((prevTodo) => [
         ...prevTodo,
-        { title: title, description: desc, checked: false,id: uuid()}
+        { title: title, description: desc, checked: false, id: uuid() },
       ]);
       setTitle("");
       setDesc("");
@@ -33,15 +35,13 @@ const AddTodo = () => {
   }
 
   return (
-
-    
     <div className="AddTODOContainer">
       <button id="taskBTN" onClick={handleModal}>
         AddTask
       </button>
-      <div >
+      <div>
         {modal && (
-          <form className="addNewForm"  onSubmit={addTodo}>
+          <form id="addNewForm" className="addNewForm" onSubmit={addTodo}>
             <div className="formLeftContainer">
               <div className="titleContainer">
                 <div className="titleHeading">Title</div>
@@ -68,7 +68,7 @@ const AddTodo = () => {
             </div>
             <div className="formRightContainer tooltip">
               <GrFormClose onClick={handleModal} />
-              <span className="tooltiptext">Close</span>
+              {/* <span className="tooltiptext">Close</span> */}
             </div>
           </form>
         )}

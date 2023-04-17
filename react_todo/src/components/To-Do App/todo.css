@@ -22,7 +22,9 @@
   #formEdit {
     border: none;
   }
-  .addNewForm{
+  #addNewForm{
+    margin: 15px 0;
+   
     width: 20rem;
   }
 }
