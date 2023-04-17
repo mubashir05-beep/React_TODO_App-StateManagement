@@ -8,44 +8,35 @@
   padding: 0;
   box-sizing: border-box;
 }
-.mainContainer{
+.mainContainer {
   display: flex;
   width: auto;
   height: 100vh;
-  flex-direction: row;  
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
-.TodoApp{
+.TodoApp {
   display: flex;
   flex-direction: column;
-  width: 33.333vw;
- 
+  width: auto;
   align-items: center;
   justify-content: center;
-  
   height: 90vh;
   margin: 5vh 0;
 }
-form{
+form {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  padding-top: 16px;
-  padding-bottom: 16px;
- 
+  gap: 1rem;
   justify-content: center;
-
 }
-.formLeftContainer{
-  border-top: 1px solid black;
-    margin-top: 14px;
-    padding-top: 14px;
+.formLeftContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
-.formRightContainer{
+.formRightContainer {
   height: 0px;
   cursor: pointer;
   scale: 1.5;

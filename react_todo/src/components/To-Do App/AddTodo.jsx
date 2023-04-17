@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { todoContext } from "./Todo";
 import { useContext } from "react";
-
 import { GrFormClose } from "react-icons/gr";
+import "./todo.css";
+import { v4 as uuid } from "uuid";
 const AddTodo = () => {
   const [todos, setTodo] = useContext(todoContext);
   const [title, setTitle] = useState("");
@@ -18,7 +19,10 @@ const AddTodo = () => {
     if (title == "" || desc == "") {
       return 0;
     } else {
-      setTodo((prevTodo) => [...prevTodo, { title: title, description: desc, checked:false }]);
+      setTodo((prevTodo) => [
+        ...prevTodo,
+        { title: title, description: desc, checked: false,id: uuid()}
+      ]);
       setTitle("");
       setDesc("");
     }
@@ -29,42 +33,46 @@ const AddTodo = () => {
   }
 
   return (
-    <div>
+
+    
+    <div className="AddTODOContainer">
       <button id="taskBTN" onClick={handleModal}>
         AddTask
       </button>
-      {modal && (
-        <form onSubmit={addTodo}>
-          <div className="formLeftContainer">
-            <div className="titleContainer">
-              <div className="titleHeading">Title</div>
-              <input
-                type="text"
-                name="title"
-                value={title}
-                placeholder="Enter title"
-                onChange={getTitle}
-              />
-            </div>
-            <div className="descContainer">
-              <div className="descDescription">Description</div>
-              <input
-                type="text"
-                name="description"
-                value={desc}
-                placeholder="Enter description"
-                onChange={getDesc}
-              />
-            </div>
+      <div >
+        {modal && (
+          <form className="addNewForm"  onSubmit={addTodo}>
+            <div className="formLeftContainer">
+              <div className="titleContainer">
+                <div className="titleHeading">Title</div>
+                <input
+                  type="text"
+                  name="title"
+                  value={title}
+                  placeholder="Enter title"
+                  onChange={getTitle}
+                />
+              </div>
+              <div className="descContainer">
+                <div className="descDescription">Description</div>
+                <input
+                  type="text"
+                  name="description"
+                  value={desc}
+                  placeholder="Enter description"
+                  onChange={getDesc}
+                />
+              </div>
 
-            <button>Submit</button>
-          </div>
-          <div className="formRightContainer tooltip">
-            <GrFormClose onClick={handleModal} />
-            <span className="tooltiptext">Close</span>
-          </div>
-        </form>
-      )}
+              <button className="submit">Add</button>
+            </div>
+            <div className="formRightContainer tooltip">
+              <GrFormClose onClick={handleModal} />
+              <span className="tooltiptext">Close</span>
+            </div>
+          </form>
+        )}
+      </div>
     </div>
   );
 };

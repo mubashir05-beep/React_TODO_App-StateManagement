@@ -6,7 +6,43 @@
   width: 32rem;
   margin-bottom: 10px;
   border: 1px solid black;
+  margin: 20px;
   padding: 10px;
+}
+@media screen and (max-width: 540px) {
+  .container {
+    width: 20rem;
+    margin: 0;
+  }
+  
+  /* #formEditALL{
+    padding: 12px 8px;
+  } */
+  
+  #formEdit {
+    border: none;
+  }
+  .addNewForm{
+    width: 20rem;
+  }
+}
+
+
+#taskBTN {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 105px;
+  transition: all 0.35s ease-in-out;
+}
+#taskBTN:hover {
+  background-color: rgb(44, 44, 44);
+}
+.addNewForm {
+  z-index: 1;
 }
 .green {
   color: rgb(0, 124, 21);
@@ -35,23 +71,27 @@
 }
 .icons {
   display: flex;
-  gap: 0.7rem;
+  gap: 1rem;
 }
 .descModel {
   font-size: 14px;
 }
+input{
+  padding: 2px 5px ;
+}
 .formEdit {
   display: flex;
   flex-direction: row;
-
+  border: 1px solid black;
   justify-content: center;
+  width: 350px;
+  gap: 10px;
+  padding: 15px 0;
 }
 #formEditALL {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  border-top: 1px solid black;
-  margin: 14px;
+
 }
 .inputEditText,
 .inputEditDesc {
@@ -59,9 +99,11 @@
   font-weight: 500;
 }
 .crossIcon {
-  height: 0px;
+  height: 40px;
   cursor: pointer;
   scale: 1.5;
+}
+.iconOpenDesc {
 }
 .inputText,
 .inputDesc {
@@ -145,12 +187,12 @@
 
 .tooltipleft .tooltiptextleft {
   visibility: hidden;
-  width: 55px;
+
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 5px 5px;
   position: absolute;
   font-size: 12px;
   z-index: 1;
@@ -170,5 +212,81 @@
   border-color: transparent black transparent transparent;
 }
 .tooltipleft:hover .tooltiptextleft {
+  visibility: visible;
+}
+.AddTODOContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.addNewForm {
+  border: 1px solid black;
+  padding: 15px;
+  margin: 15px;
+}
+.formEditContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.submit {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 5px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 65px;
+  transition: all 0.35s ease-in-out;
+}
+.submit:hover {
+  background-color: rgb(44, 44, 44);
+}
+.unCompeletedTask {
+  display: flex;
+  flex-direction: column;
+}
+.workTodo {
+  max-height: 70vh;
+  min-width: 34vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+}
+.tooltiptop {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltiptop .tooltiptexttop {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltiptop .tooltiptexttop::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltiptop:hover .tooltiptexttop {
   visibility: visible;
 }

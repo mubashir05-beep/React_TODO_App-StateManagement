@@ -7,14 +7,12 @@ import Music from "./components/Music/Music";
 function App() {
   return (
     <div className="mainContainer">
-      <WeatherApp />
       <Todo>
         <div className="TodoApp">
           <AddTodo/>
           <TodoWork />
         </div>
       </Todo>
-      <Music />
     </div>
   );
 }

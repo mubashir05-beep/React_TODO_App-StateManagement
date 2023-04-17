@@ -1,11 +1,12 @@
 import React, { createContext, useRef, useState } from "react";
+import { v4 as uuid } from "uuid"; // Import uuid library
 
 import "./todo.css";
 export const todoContext = createContext();
 export const Todo = (props) => {
   const [todos, setTodo] = useState([
     {
-      id: "1", // Add an id field to each todo item
+      id: uuid(), // Generate unique id using uuid
       checked: false,
       title: "Welcome",
       description:

@@ -3,6 +3,8 @@ import { FiEdit3 } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+
+import { MdOpenInFull } from "react-icons/md";
 import "./todo.css";
 import CompletedTask from "./CompletedTask";
 
@@ -10,7 +12,7 @@ const Work = ({ id, title, description, setTodo, checked }) => {
   const [editTitle, setEditTitle] = useState("");
   const [editDesc, setEditDesc] = useState("");
   const [toggleModal, setToggleModal] = useState(false);
-  const [green,setGreen]=useState(false);
+  const [green, setGreen] = useState(false);
   function edit_Title(e) {
     setEditTitle(e.target.value);
   }
@@ -61,9 +63,11 @@ const Work = ({ id, title, description, setTodo, checked }) => {
       });
     });
   }
-  
-  
-  
+  const [openDesc, setOpenDesc] = useState(false);
+  function handleOpen() {
+    return setOpenDesc(!openDesc);
+  }
+
   return (
     <>
       <div className="container">
@@ -71,12 +75,12 @@ const Work = ({ id, title, description, setTodo, checked }) => {
           <div className="workTitleContainer">
             <div className="title">{title}</div>
             <div className="icons">
-              <div className="iconCheck">
-              <AiOutlineCheckCircle
+              <div className="iconCheck tooltipright">
+                <AiOutlineCheckCircle
                   className={checked ? "checkicon green" : "checkicon"}
                   onClick={handleGreen}
                 />
-                
+                <span className="tooltiptextright">Check</span>
               </div>
               <div className="editicons tooltipright">
                 <FiEdit3 id="editIcn" onClick={handleModal} />
@@ -84,14 +88,19 @@ const Work = ({ id, title, description, setTodo, checked }) => {
               </div>
               <div className="iconDelete tooltipleft">
                 <MdDeleteForever id="editIcn" onClick={handleDelete} />
-                <span className="tooltiptextleft">Delete</span>
+                {/* <span className="tooltiptextleft">Delete</span> */}
+              </div>
+              <div className="iconOpenDesc tooltipright">
+                <MdOpenInFull id="editIcn" onClick={handleOpen} />
+                <span className="tooltiptextright">Desc</span>
               </div>
             </div>
           </div>
-          <div className="descModel">{description}</div>
+          {openDesc && <div className="descModel">{description}</div>}
+
           <div className="formEditContainer">
             {toggleModal && (
-              <div className="formEdit">
+              <div className="formEdit" id="formEdit">
                 <form id="formEditALL" onSubmit={handleEdit}>
                   <div className="inputText">
                     <div className="inputEditText">Change Title</div>
@@ -114,7 +123,9 @@ const Work = ({ id, title, description, setTodo, checked }) => {
                     />
                   </div>
 
-                  <button type="submit">submit</button>
+                  <button className="submit" type="submit">
+                    Edit
+                  </button>
                 </form>
                 <div className="crossIcon tooltip">
                   <GrFormClose onClick={handleModal} />
