@@ -23,9 +23,33 @@ const Work = ({ id, title, description, setTodo, checked }) => {
 
   function handleEdit(e) {
     e.preventDefault();
-    if (editTitle === "") {
+    if (editTitle === "" && editDesc==="") {
       return;
-    } else {
+    } else if(editTitle===""){
+        setTodo((prevTodo) => {
+          return prevTodo.map((todo) => {
+            if (todo.id === id) {
+              return { ...todo, description: editDesc };
+            }
+            return todo;
+          });
+        });
+        setEditTitle("");
+        setEditDesc("");
+      }
+      else if(editDesc===""){
+        setTodo((prevTodo) => {
+          return prevTodo.map((todo) => {
+            if (todo.id === id) {
+              return { ...todo, title: editTitle };
+            }
+            return todo;
+          });
+        });
+        setEditTitle("");
+        setEditDesc("");
+      }
+      else{
       setTodo((prevTodo) => {
         return prevTodo.map((todo) => {
           if (todo.id === id) {
@@ -36,8 +60,8 @@ const Work = ({ id, title, description, setTodo, checked }) => {
       });
       setEditTitle("");
       setEditDesc("");
-    }
-  }
+    }}
+  
   function handleDelete(e) {
     e.preventDefault();
     setTodo((prevTodo) => {
