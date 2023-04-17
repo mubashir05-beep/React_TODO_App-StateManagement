@@ -1,6 +1,6 @@
 # React_TODO_App-StateManagement
 
-# GitHub User Details App
+# React Todo-App
 (NODE should be installed on the system)
 To Run Locally :
 
