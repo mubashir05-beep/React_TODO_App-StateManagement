@@ -16,8 +16,8 @@ const AddTodo = () => {
   };
   const addTodo = (e) => {
     e.preventDefault();
-    if (title == "" || desc == "") {
-      return 0;
+    if (title == "" ) {
+      return alert('Please Enter Title! Description can be added in post-edit.');
     } else {
       setTodo((prevTodo) => [
         ...prevTodo,
