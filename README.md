@@ -33,7 +33,7 @@ Technologies & Techniques Used :
     6)React file and folder structure.
     7)Responsive and clean layout.
 
-Live : [https://githubname-api.netlify.app/](https://react-todoapp-w-statemanage.netlify.app/)
+Live : https://react-todoapp-w-statemanage.netlify.app/
 
 OUTPUT/RESULTS : 
 
